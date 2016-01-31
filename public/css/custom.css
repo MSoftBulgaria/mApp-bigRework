@@ -1,0 +1,77 @@
+/* body {
+        padding-top: 0px;
+    }*/
+
+.footer {
+    background-color: #cccccc;
+    width: 100%;
+}
+
+.comments-container{
+    border-radius: 1%;
+}
+.category-warper{
+    border: 1px dotted #cccccc;
+    border-radius: 1%;
+
+}
+header {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),url(child-920128.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    margin-top:-60px;
+
+}
+
+#startPageHeader{
+    margin-top: 400px;
+    text-align: center;
+
+}
+
+#startPageHeader h1{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: #DBE8F9;
+    font-size: 38px;
+    display: inline-block;
+    border-bottom: 1px solid ;
+}
+
+
+#startPageHeader h2{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: #DBE8F9;
+    display: inline-block;
+    border-bottom: 1px solid ;
+
+}
+
+#aplication{
+    /*//margin-bottom: 103vh;*/
+}
+
+#button-div{
+    margin-top: 30vh;
+}
+#button-div a{
+    font-size:1.7em ;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: #DBE8F9;
+    display: inline-block;
+    border: 1px solid #DBE8F9;
+    border-radius: 18px;
+    padding: 8px;
+}
+#button-div a:hover {
+    text-decoration: none;
+}
+#button-div a:visited{
+    text-decoration: none;
+}
