@@ -75,3 +75,21 @@ header {
 #button-div a:visited{
     text-decoration: none;
 }
+footer a {
+    margin-left: 10px;
+}
+
+#footer-links a:hover{
+    color: white;
+}
+
+#contact a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#copyright {
+    color: #dd4814;
+    float: right;
+    margin-top: 10px;
+}
