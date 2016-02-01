@@ -62,10 +62,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-/*            'host'      => $host,
+              'host'      => $host,
             'database'  => $database,
             'username'  => $username,
-            'password'  => $password,*/
+            'password'  => $password,
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
