@@ -1,8 +1,12 @@
 ﻿var CONFIG = {
 
-    basePath:location.protocol+'//'+ location.hostname+(location.port ?':'+location.port:''),
+    basePath:location.protocol+'//'+ location.hostname+ (location.port ?':'+location.port:''),
 
-    templatesAddress:this.basePath + '/app/views/',
+    templatesAddress:location.protocol+'//'+ location.hostname+ (location.port ?':'+location.port:'') + '/app/views/',
 
-    apiAddress :this.basePath
+    apiAddress :this.basePath,
+
+    viewsPath:{
+        home:'big-header.html'
+    }
 };

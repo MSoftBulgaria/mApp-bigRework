@@ -9,7 +9,7 @@ function Render(){
  * @param deferredData
  * @param deferredView
  */
-Render.prototype.renderView = function(deferredData,deferredView,$selector){
+Render.prototype.renderViewWithData = function(deferredData,deferredView,$selector){
 
     /*Will render when both deffered objects are resolved*/
 
@@ -22,5 +22,14 @@ Render.prototype.renderView = function(deferredData,deferredView,$selector){
 
     }).fail(function(){
         console.log('Show 404');
+    });
+};
+
+Render.prototype.renderView = function(deferredView,$selector){
+
+    /*Will render when both deffered objects are resolved*/
+
+    deferredView.done(function(view){
+       $selector.html(view);
     });
 };

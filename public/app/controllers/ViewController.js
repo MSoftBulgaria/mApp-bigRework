@@ -10,7 +10,7 @@ function ViewController(configValues){
     this.loadView = function(viewName){
 
         return $.ajax({
-            url:CONFIG.templatesAddress[viewName],
+            url:CONFIG.templatesAddress + CONFIG.viewsPath[viewName],
             dataType:'html'
 
         })

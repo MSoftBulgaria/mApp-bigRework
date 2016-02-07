@@ -1,17 +1,14 @@
-$(function() {
-    var Application = (function(){
+    /*load controllers*/
+    var videoController = new VideoController();
+    var commentController = new CommentController();
+    var viewController = new ViewController();
+    var categoryController = new CategoryController();
 
-        var videoController = new VideoController();
-        var commentController = new CommentController();
-        var viewController = new VideoController();
-        var categoryController = new CategoryController();
+    console.log(viewController);
 
-        var router = Router();
-
-
-
+    /*load render*/
+    var render = new Render();
 
 
+    var router = Router(render);
 
-    }());
-});

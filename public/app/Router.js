@@ -1,11 +1,11 @@
 /**
  * Created by niki on 07.02.16.
  */
-var Router = (function(){
+var Router = function(render){
     var router = new Navigo(CONFIG.basePath, useHash=false);
 
     router.on('upload', function () {
-        console.log(arguments)
+        render.renderView(viewController.loadView('upload'))
     });
     router.on('topTen', function () {
         console.log(arguments)
@@ -20,9 +20,9 @@ var Router = (function(){
         console.log(arguments)
     });
     router.on(function () {
-        console.log(arguments)
+        render.renderView(viewController.loadView('home'),$('#main'));
     });
 
     return router;
 
-});
+};
