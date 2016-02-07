@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
     		Schema::drop('comments');
     		Schema::drop('thumbnails');
     		Schema::drop('categories');
-    		Schema::drop('fileentries');
     		Schema::drop('migrations');
     		Schema::drop('password_resets');
     		

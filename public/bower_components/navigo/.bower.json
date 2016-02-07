@@ -1,0 +1,36 @@
+{
+  "name": "navigo",
+  "description": "A simple vanilla JavaScript router with a fallback for older browsers",
+  "main": "lib/navigo.js",
+  "authors": [
+    "Krasimir Tsonev"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "router",
+    "vanilla",
+    "hash",
+    "history"
+  ],
+  "homepage": "http://work.krasimirtsonev.com/git/navigo/",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "52f02a56f4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "52f02a56f4e104d66513c4d44e1b019237f52eeb"
+  },
+  "_source": "git://github.com/krasimir/navigo.git",
+  "_target": "*",
+  "_originalSource": "navigo",
+  "_direct": true
+}

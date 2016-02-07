@@ -1,12 +1,8 @@
-﻿var config = {
-    // your module code goes here
-    templatesAddress : location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '')
-    +
+﻿var CONFIG = {
 
-        //'/yellow-yummy-lemon-dev/public/' +
-    '/app/views/',
-    apiAddress : location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '')
-        +'/'//+ '/yellow-yummy-lemon-dev/public/'
+    basePath:location.protocol+'//'+ location.hostname+(location.port ?':'+location.port:''),
 
+    templatesAddress:this.basePath + '/app/views/',
 
+    apiAddress :this.basePath
 };

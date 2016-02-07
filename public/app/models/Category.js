@@ -1,6 +1,11 @@
-function Category(object) {
-    this.id = object.id;
-    this.category_name = object.category_name;
+function Category(id,name){
+    var _id = id;
+    var _name = name;
+
+    this.getCategoryMeta = function(){
+        return {
+            id:_id,
+            name:_name
+        }
+    }
 }
-
-

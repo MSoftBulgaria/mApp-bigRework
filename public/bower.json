@@ -1,0 +1,26 @@
+{
+  "name": "mApp",
+  "homepage": "https://github.com/MSoftBulgaria/mApp-bigRework",
+  "authors": [
+    "nikihrs <nikolaihristev90@gmail.com>"
+  ],
+  "description": "It talent 5",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jQuery": "^2.2.0",
+    "mustache.js": "mustache#^2.2.1",
+    "navigo": "*",
+    "components-font-awesome": "^4.5.0",
+    "bootswatch": "^3.3.6+1"
+  }
+}
