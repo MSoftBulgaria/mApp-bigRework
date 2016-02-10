@@ -3,31 +3,171 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <!--vendor libs-->
-    <script src="bower_components/jQuery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/navigo/lib/navigo.min.js"></script>
-    <script src="bower_components/mustache.js/mustache.min.js"></script>
-    <!--application oop-->
-    <script src="/app/config.js"></script>
-    <script src="/app/controllers/Controller.js"></script>
-    <script src="/app/controllers/VideoController.js"></script>
-    <script src="/app/controllers/CategoryController.js"></script>
-    <script src="/app/controllers/CommentController.js"></script>
-    <script src="/app/controllers/ViewController.js"></script>
-    <script src="/app/Router.js"></script>
-    <script src="/app/Render.js"></script>
-    <!--
+    <script src="app/vendor/mustache.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/Ajax.js"></script>
+    <script src="app/vendor/navigo.min.js"></script>
+    <script src="app/Application.js"></script>
+    <script src="app/View.js"></script>
+    <script src="app/Data.js"></script>
+    <script src="app/models/Category.js"></script>
+    <script src="app/controllers/DomController.js"></script>
+    <script src="app/controllers/DataController.js"></script>
 
-    --><!--styles-->
-    <link rel="stylesheet" href="bower_components/bootswatch/united/bootstrap.min.css">
+	<script src="app/js/jquery.min.js"></script>
+	<script src="app/js/jasny-bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/thumbnail-gallery.css">
-    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300italic,100italic,300,100,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet " href="css/custom.css">
 
+	<style type="text/css">
+		/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 5% !important;
+  -moz-border-radius: 5% !important;
+  border-radius: 5% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #fff;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #dd4814;
+  /*#dd4814*/
+  color: #fff;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #000;
+  background-color: #ccc;
+  /*background-color: rgba(383, 87, 20, 0.85);*/
+  /*background-color: rgba(221, 72, 20, 0.85);*/
+  border-left: 2px solid #bf3e11;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+  border-left: 1px solid #eeeeee;
+}
 
 
+
+		/* Registration form */
+		
+#reg-container {
+ margin:20px auto;
+ font-family: "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+ font-size: 14px;
+}
+.panel {
+  overflow:hidden;
+}
+.btn-block {
+  
+}
+
+#btn-id {
+	padding:1em 0;
+  border-radius:0;
+  font-weight:700;
+  font-size:1.25em;
+  background-color: #dd4814;
+  border-color: #bf3e11;
+  letter-spacing: 2px;
+}
+
+#btn-id:hover {
+  background-color: #bf3e11;
+  border-color: #bf3e11;
+}
+
+
+		/* Change password form */
+
+#change-pass-form {
+	width: 40%;
+	margin-bottom: 40px;
+}
+
+</style>
+	
+	
 </head>
 <body>
 <div id="main" data-role="app-container">
@@ -62,7 +202,7 @@
                 </form>
             </li>
             <li><a href="#play/1">Dumb player example</a></li>
-            <li class="dropdown">
+			<li class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                     <form method="post" action="login" accept-charset="UTF-8">
@@ -71,6 +211,20 @@
                         <input class="btn btn-primary btn-sm btn-block" type="submit" id="sign-in" value="Sign In">
 
                     </form>
+					<div id="reg-option">
+						Don't have an account?
+						<a href="#">Register</a>
+					</div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Name<strong class="caret"></strong></a>
+					<ul class="dropdown-menu" style="padding: 5px;"> 
+						<li><a href="#profile">My Profile</a></li>
+						<li><a href="#personal-videos">My videos</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Sign out</a></li>
+					</ul>
                 </div>
             </li>
         </ul>
@@ -78,13 +232,255 @@
     </div>
 
 </nav>
+
 <!--start page-->
 <div id="aplication">
-
 </div>
 
 
-<!--footer section-->
+<!-- Profile container -->
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://placehold.it/140x210" class="img-responsive" alt="">
+				</div>
+				<!-- END USERPIC -->
+				<!-- USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Username
+					</div>
+				</div>
+				<!-- END USER TITLE -->
+				
+				<!-- MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+							<i class="fa fa-home"></i>
+							Overview </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="fa fa-user"></i>
+							Account Settings </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			   Some user related content goes here...
+            </div>
+		</div>
+	</div>
+</div>
+<br />
+<br />
+<!--END Profile container -->
+
+<hr />
+
+<!-- Registration Form -->
+
+<div class="container" id="reg-container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form class="form form-signup" role="form">
+						<div class="form-group">
+							<label for="username">Username:</label>
+							<div class="input-group">
+								<span class="input-group-addon"><span class="fa fa-user"></span></span>
+								<input type="text" class="form-control" placeholder="Username" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="fa fa-envelope"></span>
+								</span>
+								<input type="text" class="form-control" placeholder="Email Address" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="password">Password: </label>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="fa fa-lock"></span>
+								</span>
+								<input type="password" class="form-control" placeholder="Password" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password">Confirm password: </label>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<span class="fa fa-lock"></span>
+								</span>
+								<input type="password" class="form-control" placeholder="Re-enter Password" />
+							</div>
+						</div>
+						
+						<div class="checkbox">
+							<label><input type="checkbox"/> I agree to the <a href="#">terms of use</a></label>
+						</div>
+						</div>
+						<button id="btn-id" class="btn btn-sm btn-success btn-block">REGISTER</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END Registration Form -->
+
+<hr />
+
+<!-- User videos panel -->
+<div class="container">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-md-12">
+        <h1 class="page-header">My videos</h1>
+        <div class="row">
+            <h3 class="page-header">Name of video</h3>
+            <div class="col-lg-3 col-xs-12 col-md-12">
+                <img src="http://placehold.it/140x100">
+            </div>
+            <div class="col-lg-9 col-xs-12 col-md-12">
+                <p> Description </p>
+            </div>
+        </div>
+		
+		<div class="row">
+            <h3 class="page-header">Name of video</h3>
+            <div class="col-lg-3 col-xs-12 col-md-12">
+                <img src="http://placehold.it/140x100">
+            </div>
+            <div class="col-lg-9 col-xs-12 col-md-12">
+                <p> Description </p>
+            </div>
+        </div>
+		
+		<div class="row">
+            <h3 class="page-header">Name of video</h3>
+            <div class="col-lg-3 col-xs-12 col-md-12">
+                <img src="http://placehold.it/140x100">
+            </div>
+            <div class="col-lg-9 col-xs-12 col-md-12">
+                <p> Description </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<!-- END User videos panel -->
+
+<hr />
+
+<!-- Account Settings on User profile -->
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+			
+				<!-- USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://placehold.it/140x210" class="img-responsive" alt="">
+				</div>
+				<!-- END USERPIC -->
+				
+				<!-- USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Username
+					</div>
+				</div>
+				<!-- END USER TITLE -->
+				
+				<!-- MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a href="#">
+							<i class="fa fa-home"></i>
+							Overview </a>
+						</li>
+						<li class="active">
+							<a href="#">
+							<i class="fa fa-user"></i>
+							Account Settings </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+				<p>Change your password:</p>
+				<form class="form form-signup" id="change-pass-form" role="form">
+					<div class="form-group">
+						<label for="password">New Password: </label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-lock"></span>
+							</span>
+							<input type="password" class="form-control" placeholder="New Password" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="password">Confirm new password: </label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-lock"></span>
+							</span>
+							<input type="password" class="form-control" placeholder="Re-enter New Password" />
+						</div>
+					</div>
+					
+					<button type="button" class="btn btn-default btn-block">Save changes</button>
+				</form>
+				
+				<p>Change profile picture:</p>
+				<form>
+					<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+						<div class="form-control" data-trigger="fileinput">
+							<i class="fa fa-file fa-exists"></i> 
+							<span class="fileinput-filename"></span>
+						</div>
+						<span class="input-group-addon btn btn-default btn-file">
+							<span class="fileinput-new">Select file</span>
+							<span class="fileinput-exists">Change</span>
+							<input type="file" name="...">
+						</span>
+						<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+					</div>	
+				</form>	
+            </div>
+		</div>
+	</div>
+</div>
+<br />
+<br />
+
+<!-- END Account Settings on User profile -->
+
 <div class="container footer">
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 col-md-12">
         <footer>
@@ -107,7 +503,9 @@
         </footer>
     </div>
 </div>
-<script src="/app/Application.js"></script>
 
+<script src="app/vendor/jquery.min.js"></script>
+<script src="app/vendor/bootstrap.min.js"></script>
+<script src="app/vendor/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
