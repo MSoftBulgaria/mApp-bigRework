@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script src="app/vendor/jquery.min.js"></script>
     <script src="app/vendor/mustache.js"></script>
     <script src="app/config.js"></script>
     <script src="app/Ajax.js"></script>
@@ -14,8 +15,7 @@
     <script src="app/controllers/DomController.js"></script>
     <script src="app/controllers/DataController.js"></script>
 
-	<script src="app/js/jquery.min.js"></script>
-	<script src="app/js/jasny-bootstrap.min.js"></script>
+	<script src="app/vendor/jasny-bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/jasny-bootstrap.min.css">
@@ -165,6 +165,103 @@
 	margin-bottom: 40px;
 }
 
+@media only screen and (max-width: 900px)  {
+	#change-pass-form {
+		width: 100%;
+	}
+}
+
+
+		/* Upload completed view */
+
+#upload-completed {
+	width: 60%;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 2%;
+	-moz-border-radius: 2%;
+	border-radius: 2%;
+}
+
+
+@media only screen and (max-width: 900px)  {
+	#upload-completed {
+		width: 100%;
+	}
+}
+
+#upload-completed h2 {
+	margin-left: 1%;
+	margin-bottom: 0;
+}
+
+#upload-completed-text {
+	margin-left: 4%;
+	margin-top: 1%;
+}
+
+#upload-completed-text p {
+	font-weight: bold;
+}
+
+#upload-completed-btns {
+	margin: 5%;
+}
+
+#upload-completed-btns button {
+	width: 170px;
+}
+
+@media only screen and (max-width: 1000px)  {
+	#upload-completed-btns button {
+		margin-bottom: 2%;
+	}
+}
+
+
+		/*  Feedback form  */
+
+#feedback-form button {
+	width: 30%;
+	float: right;
+	margin-top: 1%;
+}
+
+		/* Registration Completed */
+
+#registration-completed {
+	width: 60%;
+	border: 1px solid #38b44a;
+	-webkit-border-radius: 2%;
+	-moz-border-radius: 2%;
+	border-radius: 2%;
+}
+
+#registration-completed h2 {
+	margin-left: 1%;
+	margin-bottom: 0;
+}
+
+#registration-completed-btns button {
+	width: 170px;
+}
+
+@media only screen and (max-width: 1000px)  {
+	#registration-completed {
+		width: 100%;
+	}
+
+	#registration-completed-btns button {
+		margin-bottom: 1%;
+	}
+}
+
+
+		/* About us panel */
+#about-us h3 {
+	font-size: 18px;
+}
+
+
 </style>
 	
 	
@@ -175,62 +272,61 @@
 </div>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Togle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">MellonApp</a>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li> <a href="#topTen">Top 10 videos</a></li>
-            <li> <a href="#users">Chanels</a></li>
-            <li> <a href="#upload">Upload video</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search video" name="video" id="srch-term">
-                    <div class="input-group-btn">
-                        <button href="#search" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                </form>
-            </li>
-            <li><a href="#play/1">Dumb player example</a></li>
-			<li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                    <form method="post" action="login" accept-charset="UTF-8">
-                        <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
-                        <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
-                        <input class="btn btn-primary btn-sm btn-block" type="submit" id="sign-in" value="Sign In">
-
-                    </form>
-					<div id="reg-option">
-						Don't have an account?
-						<a href="#">Register</a>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Togle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">MellonApp</a>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li> <a href="#topTen">Top 10 videos</a></li>
+				<li> <a href="#users">Chanels</a></li>
+				<li> <a href="#users1">Users</a></li>
+				<li> <a href="#upload">Upload video</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search video" name="video" id="srch-term">
+						<div class="input-group-btn">
+							<button href="#search" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+						</div>
 					</div>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Name<strong class="caret"></strong></a>
-					<ul class="dropdown-menu" style="padding: 5px;"> 
+					</form>
+				</li>
+				<li><a href="#play/1">Dumb player example</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+					<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+						<form method="post" action="login" accept-charset="UTF-8">
+							<input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
+							<input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
+							<input class="btn btn-primary btn-sm btn-block" type="submit" id="sign-in" value="Sign In">
+
+						</form>
+						<div id="reg-option">
+							Don't have an account?
+							<a href="#">Register</a>
+						</div>
+					</div>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown">Name<strong class="caret"></strong></a>
+					<ul class="dropdown-menu" style="padding: 5px;">
 						<li><a href="#profile">My Profile</a></li>
 						<li><a href="#personal-videos">My videos</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Sign out</a></li>
 					</ul>
-                </div>
-            </li>
-        </ul>
+				</li>
+			</ul>
+		</div>
     </div>
-    </div>
-
 </nav>
 
 <!--start page-->
@@ -337,7 +433,7 @@
 						<div class="checkbox">
 							<label><input type="checkbox"/> I agree to the <a href="#">terms of use</a></label>
 						</div>
-						</div>
+
 						<button id="btn-id" class="btn btn-sm btn-success btn-block">REGISTER</button>
 					</form>
 				</div>
@@ -481,6 +577,233 @@
 
 <!-- END Account Settings on User profile -->
 
+<!-- Upload completed view -->
+
+<div id="upload-completed" class="container">
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<h2 class="text-center">
+				<span><img src="check_icon.png" width="50" height="50" /></span>
+				<span class="text-success">Upload complete!</span>
+
+			</h2>
+		</div>
+
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<div id="upload-completed-text">
+				<p>Video name: &nbsp; <span style="font-weight: normal">My first video</span></p>
+				<p>Description: &nbsp; <span style="font-weight: normal">First uploaded video</span></p>
+				<p>Category: &nbsp; <span style="font-weight: normal">Entertainment</span></p>
+				<p>Created on: &nbsp; <span style="font-weight: normal">09 March 2016</span></p>
+
+				<p>Link for sharing: &nbsp; <a href="#" style="font-weight: normal">link</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" id="upload-completed-btns">
+		<div class="col-lg-12 col-md-12">
+			<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+				<span><button type="button" class="btn btn-default">Watch the video</button></span>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+				<span><button type="button" class="btn btn-default">Back to editing</button></span>
+
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+				<span><button type="button" class="btn btn-default">Upload other video</button></span>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<!-- END Upload completed view -->
+
+<!-- Feedback -->
+
+<div class="container" id="feedback-form">
+	<div class="col-lg-10 col-lg-offset-1 col-xs-12 col-md-12">
+		<h1 class="page-header">Send us your feedback</h1>
+
+		<div class="row">
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				<form>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" placeholder="Enter email">
+					</div>
+
+					<div class="form-group">
+						<label for="topic">Topic:</label>
+						<input type="text" class="form-control" id="topic" placeholder="Enter topic">
+					</div>
+
+					<div class="form-group">
+						<label for="message">Message:</label>
+						<textarea class="form-control" rows="5" id="message" placeholder="Enter your feedback"></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- END Feedback -->
+
+
+<!-- Help -->
+
+<div class="container" id="help-panel">
+	<div class="col-lg-10 col-lg-offset-1 col-xs-12 col-md-12">
+		<h1 class="page-header">Help and frequently asked questions</h1>
+
+		<div class="row">
+			<h3 class="page-header">How to register?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				In the menu find a button called <span style="color: #dd4814">Sign In</span>. When you click on it, a
+				menu drops and in the bottom you can see a link called <span style="color: #dd4814">Register</span>.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to log in to my account?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				In the menu find a button called <span style="color: #dd4814">Sign In</span>.
+				When you click on it, a menu drops and there are the fields for username and password which you have to fill.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to edit my profile?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				In the menu click on your name. A menu drops and you see an option <span style="color: #dd4814">My profile</span>.
+				Click on it and you go to your profile, where you can see a button <span style="color: #dd4814">Account Settings</span>.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to upload a video?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				In the menu there is a button called <span style="color: #dd4814">Upload video</span>. Enter the fields and click on <span style="color: #dd4814">Upload</span>.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to delete a video?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				In the menu above click on your name. A menu drops and you see an option <span style="color: #dd4814">My videos</span>.
+				This is the place where you can manage your videos.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to browse videos?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				Go to the home page and click <span style="color: #dd4814">Discover videos</span>.
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="page-header">How to find a particular video?</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				Use the search field which you can find in the menu above.
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- END Help -->
+<br>
+<!-- Registration Complete -->
+
+<div id="registration-completed" class="container">
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<h2 class="text-center">
+
+				<span class="text-success">Congratulations! </span>
+				<span><img src="thumbs.png" alt="" width="130" height="100"></span>
+
+			</h2>
+		</div>
+
+	</div>
+
+	<hr />
+	<h4 class="text-center">Your registration is completed!</h4>
+	<p class="text-center">You can now log into your account or go back to the homepage.</p>
+	<br>
+	<div class="row" id="registration-completed-btns">
+		<div class="col-lg-12 col-md-12">
+			<div class="col-lg-6 col-md-6 col-xs-12 text-center">
+				<span><button type="button" class="btn btn-success">Log In</button></span>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-xs-12 text-center">
+				<span><button type="button" class="btn btn-success">Back to beginning</button></span>
+
+			</div>
+		</div>
+	</div>
+	<br>
+</div>
+
+<!-- END Registration Complete -->
+
+<!-- About us -->
+
+<div class="container" id="about-us">
+	<div class="col-lg-10 col-lg-offset-1 col-xs-12 col-md-12">
+		<h1 class="page-header">About us</h1>
+
+		<div class="row text-center">
+			<img src="programmer1.jpg" alt="" width="" height=""> <br>
+			<br>
+			<h3>We are young enthusiasts who are crazy about programming ! <br> ( we admit about being geeks )</h3>
+			<div class="col-lg-12 col-xs-12 col-md-12">
+				<hr>
+				<br>
+				<img src="frontend.jpg" alt="" width="409" height="293">
+				<h3>And this is how we see our future work.</h3>
+			</div>
+		</div>
+
+		<br>
+		<hr>
+		<br>
+
+		<div class="row text-center">
+			<img src="Sharing-is-nice.jpg" alt="" width="" height=""> <br>
+			<br>
+			<h3>We created MelonApp as a project for our course.
+				<br>
+				It is a website for video sharing where you can
+				<br>
+			also find friends depending on similar tastes for video and music.</h3>
+		</div>
+
+	</div>
+</div>
+
+<!-- END About us -->
+
+
+<br>
+
 <div class="container footer">
     <div class="col-lg-8 col-lg-offset-2 col-xs-12 col-md-12">
         <footer>
@@ -491,7 +814,6 @@
 				</span>
 				<span id="footer-links">
 					<a href="#">About us</a>
-					<a href="#">Copyright</a>
 					<a href="#">Privacy</a>
 					<a href="#">Help</a>
 					<a href="#">Feedback</a>
